@@ -6,7 +6,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <changeSet id="2022-05-01--0001-product" author="baksart">
-
+        <validCheckSum> 8:3555efa754ac58a273c0de6721b17b1a </validCheckSum>
         <preConditions onFail="MARK_RAN">
             <not>
                 <tableExists tableName="product"/>
