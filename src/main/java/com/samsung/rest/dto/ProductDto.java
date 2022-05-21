@@ -20,6 +20,8 @@ public class ProductDto {
 
     private String name;
 
+    private String code;
+
     private CategoryDto categoryDto;
 
     private String composition;
@@ -31,6 +33,7 @@ public class ProductDto {
         return new ProductDto(
                 product.getId(),
                 product.getName(),
+                product.getCode(),
                 CategoryDto.toDto(product.getCategory()),
                 product.getComposition()
         );

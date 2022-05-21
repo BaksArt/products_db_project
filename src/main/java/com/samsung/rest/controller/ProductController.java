@@ -21,24 +21,31 @@ public class ProductController {
 
     @PostMapping("/product")
     public ProductDto insertProduct(@RequestParam String nameProduct,
+                                    @RequestParam String code,
                               @RequestParam String nameCategory,
                               @RequestParam String composition){
-        Product product = productService.insert(nameProduct, nameCategory, composition);
+        Product product = productService.insert(nameProduct, code, nameCategory, composition);
 
         return ProductDto.toDto(product);
     }
 
     @PutMapping("/product/{id}")
     public ProductDto updateProduct(@PathVariable int id, @RequestParam String nameProduct,
+                                    @RequestParam String code,
                               @RequestParam String nameCategory,
                               @RequestParam String composition){
-        Product product = productService.update(id, nameProduct, nameCategory, composition);
+        Product product = productService.update(id, nameProduct, code, nameCategory, composition);
         return ProductDto.toDto(product);
     }
 
     @GetMapping("/product/{id}")
     public ProductDto getProductById(@PathVariable int id){
         return ProductDto.toDto(productService.getById(id));
+    }
+
+    @GetMapping("/product/{code}")
+    public ProductDto getProductByCode(@PathVariable String code){
+        return ProductDto.toDto(productService.getByCode(code));
     }
 
     @DeleteMapping("/product/{id}")

@@ -19,12 +19,17 @@ public class Product {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "code")
+    private String code;
+
     @ManyToOne(targetEntity = Category.class, fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)//cascade
     @JoinColumn(name = "category_id")
     private Category category;
 
     @Column(name = "composition")
     private String composition;
+
+
 
 
 }

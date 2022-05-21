@@ -8,6 +8,7 @@ public interface ProductService {
 
     Product insert(
             String nameProduct,
+            String code,
             String nameCategory,
             String composition
     );
@@ -15,6 +16,7 @@ public interface ProductService {
     Product update(
             int id,
             String nameProduct,
+            String code,
             String nameCategory,
             String composition
     );
@@ -24,6 +26,8 @@ public interface ProductService {
     Product getById(int id);
 
     List<Product> getByName(String nameProduct);
+
+    Product getByCode(String code);
 
     void deleteById(int id);
 

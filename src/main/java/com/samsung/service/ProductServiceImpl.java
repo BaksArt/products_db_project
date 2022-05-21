@@ -19,7 +19,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     @Transactional
-    public Product insert(String nameProduct, String nameCategory, String composition) {
+    public Product insert(String nameProduct, String code, String nameCategory, String composition) {
 
         Category category = categoryRepository.findByName(nameCategory);
 
@@ -32,6 +32,7 @@ public class ProductServiceImpl implements ProductService{
 
         Product product = Product.builder()
                 .name(nameProduct)
+                .code(code)
                 .category(category)
                 .composition(composition)
                 .build();
@@ -41,7 +42,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     @Transactional
-    public Product update(int id, String nameProduct, String nameCategory, String composition) {
+    public Product update(int id, String nameProduct, String code, String nameCategory, String composition) {
         Category category = categoryRepository.findByName(nameCategory);
 
         if(category == null){
@@ -54,6 +55,7 @@ public class ProductServiceImpl implements ProductService{
         Product product = Product.builder()
                 .id(id)
                 .name(nameProduct)
+                .code(code)
                 .category(category)
                 .composition(composition)
                 .build();
@@ -75,6 +77,9 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> getByName(String nameProduct) {
         return productRepository.findByName(nameProduct);
     }
+
+    @Override
+    public Product getByCode(String code) {return productRepository.findByCode(code);}
 
     @Override
     @Transactional
