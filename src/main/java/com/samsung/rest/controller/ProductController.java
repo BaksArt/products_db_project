@@ -23,8 +23,8 @@ public class ProductController {
     public ProductDto insertProduct(@RequestParam String nameProduct,
                                     @RequestParam String code,
                               @RequestParam String nameCategory,
-                              @RequestParam String composition){
-        Product product = productService.insert(nameProduct, code, nameCategory, composition);
+                              @RequestParam String composition, @RequestParam String foto){
+        Product product = productService.insert(nameProduct, code, nameCategory, composition, foto);
 
         return ProductDto.toDto(product);
     }
@@ -33,8 +33,8 @@ public class ProductController {
     public ProductDto updateProduct(@PathVariable int id, @RequestParam String nameProduct,
                                     @RequestParam String code,
                               @RequestParam String nameCategory,
-                              @RequestParam String composition){
-        Product product = productService.update(id, nameProduct, code, nameCategory, composition);
+                              @RequestParam String composition, @RequestParam String foto){
+        Product product = productService.update(id, nameProduct, code, nameCategory, composition, foto);
         return ProductDto.toDto(product);
     }
 

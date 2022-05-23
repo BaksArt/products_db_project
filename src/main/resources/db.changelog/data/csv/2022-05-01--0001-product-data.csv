@@ -1,4 +1,4 @@
-id;name;code;category_id;composition
-;biscuits;code;1;composition1
-;milk;code;2;composition2
-;chocolate;code;3;composition3
+id;name;code;category_id;composition;foto
+;biscuits;code;1;composition1;foto
+;milk;code;2;composition2;foto
+;chocolate;code;3;composition3;foto

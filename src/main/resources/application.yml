@@ -2,7 +2,7 @@
 
 
 server:
-  port: 8084
+  port: 8081
 
 spring:
   # Подключение к H2 бд через jdbc

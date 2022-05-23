@@ -26,6 +26,8 @@ public class ProductDto {
 
     private String composition;
 
+    private String foto;
+
 
     public static ProductDto toDto(Product product){
 
@@ -35,7 +37,8 @@ public class ProductDto {
                 product.getName(),
                 product.getCode(),
                 CategoryDto.toDto(product.getCategory()),
-                product.getComposition()
+                product.getComposition(),
+                product.getFoto()
         );
     }
 }

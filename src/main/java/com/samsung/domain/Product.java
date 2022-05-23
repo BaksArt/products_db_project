@@ -29,6 +29,9 @@ public class Product {
     @Column(name = "composition")
     private String composition;
 
+    @Column(name = "foto")
+    private String foto;
+
 
 
 

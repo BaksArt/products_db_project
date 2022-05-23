@@ -10,7 +10,8 @@ public interface ProductService {
             String nameProduct,
             String code,
             String nameCategory,
-            String composition
+            String composition,
+            String foto
     );
 
     Product update(
@@ -18,7 +19,8 @@ public interface ProductService {
             String nameProduct,
             String code,
             String nameCategory,
-            String composition
+            String composition,
+            String foto
     );
 
     List<Product> getAll();
