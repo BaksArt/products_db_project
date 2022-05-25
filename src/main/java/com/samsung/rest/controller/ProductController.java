@@ -38,10 +38,10 @@ public class ProductController {
         return ProductDto.toDto(product);
     }
 
-    @GetMapping("/product/{id}")
-    public ProductDto getProductById(@PathVariable int id){
-        return ProductDto.toDto(productService.getById(id));
-    }
+   // @GetMapping("/product/{id}")
+    //public ProductDto getProductById(@PathVariable int id){
+      //  return ProductDto. toDto(productService.getById(id));
+    //}
 
     @GetMapping("/product/{code}")
     public ProductDto getProductByCode(@PathVariable String code){
